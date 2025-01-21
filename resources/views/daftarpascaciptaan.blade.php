@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard - Sentra HKI UG')
+@section('title', 'Daftar Pasca Ciptaan - Sentra HKI UG')
 
 @section('content')
     <div class="container">
         <!-- Daftar Ciptaan -->
         <div class="card mt-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <strong>Daftar Ciptaan</strong>
+                <strong>Daftar Pasca Ciptaan</strong>
                 <button type="button" class="btn btn-success" id="addCiptaan">+ Tambah</button>
             </div>
             <div class="card-body bg-white">
@@ -135,6 +135,60 @@
                                 <td class="text-nowrap">Lunas Pengajuan Pencatatan Ciptaan</td>
                                 <td class="text-nowrap">Diterima</td>
                                 <td class="text-nowrap">21-01-2025 14:48:02</td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap" style="position: sticky; right: 0; z-index: 2;">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item" href="#">Hapus</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><a href="#">EC00202509389</a></td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap">Widyo Nugroho</td>
+                                <td class="text-nowrap">Aplikasi E-Logistik untuk Kelompok Tani di Desa</td>
+                                <td class="text-nowrap">20-01-2025 11:44:06</td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap">UMK, Lembaga Pendidikan, Lembaga Litbang Pemerin</td>
+                                <td class="text-nowrap">Program Komputer</td>
+                                <td class="text-nowrap">DEPOK</td>
+                                <td class="text-nowrap">Lunas Pengajuan Pencatatan Ciptaan</td>
+                                <td class="text-nowrap">Diterima</td>
+                                <td class="text-nowrap">20-01-2025 11:47:02</td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap" style="position: sticky; right: 0; z-index: 2;">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item" href="#">Hapus</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap"><a href="#">EC00202509267</a></td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap">Widyo Nugroho</td>
+                                <td class="text-nowrap">Simulasi Dinamik Kendaraan dengan Software MSC A</td>
+                                <td class="text-nowrap">20-01-2025 10:33:06</td>
+                                <td class="text-nowrap"> </td>
+                                <td class="text-nowrap">UMK, Lembaga Pendidikan, Lembaga Litbang Pemerin</td>
+                                <td class="text-nowrap">Buku Panduan/Petunjuk</td>
+                                <td class="text-nowrap">DEPOK</td>
+                                <td class="text-nowrap">Lunas Pengajuan Pencatatan Ciptaan</td>
+                                <td class="text-nowrap">Diterima</td>
+                                <td class="text-nowrap">20-01-2025 10:38:03</td>
                                 <td class="text-nowrap"> </td>
                                 <td class="text-nowrap" style="position: sticky; right: 0; z-index: 2;">
                                     <div class="dropdown">

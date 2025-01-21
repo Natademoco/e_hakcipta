@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Sentra HKI UG'))</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -23,31 +23,55 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container d-flex justify-content-between">
                 <!-- Navbar Kiri: Logo -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/dashboard') }}">
                     <img src="{{ asset('Logo.png') }}" alt="Logo DJKI" style="height: 40px;">
                 </a>
 
                 <!-- Navbar Tengah: Menu -->
-                @if (!in_array(Route::currentRouteName(), ['login', 'register']))
+                @if (Auth::check() && !in_array(Route::currentRouteName(), ['login', 'register']))
                     <div class="d-none d-md-flex">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/sejarah') }}">Sejarah</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/hak-cipta') }}">Hak Cipta</a>
+                            <!-- Dropdown Hak Cipta -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="hakCiptaDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Hak Cipta
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="hakCiptaDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('/hak-cipta') }}">Permohonan Baru</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('/dashboard') }}">Daftar Ciptaan</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/pasca-hak-cipta') }}">Pasca Hak Cipta</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="pascaHakCiptaDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pasca Hak Cipta
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="pascaHakCiptaDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('/pasca-hak-cipta') }}">Permohonan
+                                            Baru</a>
+                                        <a class="dropdown-item" href="{{ url('/daftar-pasca-ciptaan') }}">Daftar Pasca
+                                            Ciptaan</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 @endif
 
+
                 <!-- Navbar Kanan: Nama Pengguna atau Tombol -->
                 <ul class="navbar-nav">
                     @guest
-                        @if (Route::currentRouteName() === 'login')
+                        @if (Route::currentRouteName() === 'login' || '/')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
